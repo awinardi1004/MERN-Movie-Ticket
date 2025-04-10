@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
 
-const genreSchema = new mongoose.Schema(
+const theaterSchema = new mongoose.Schema(
     {
         name: {
+            type: String,
+            required: true
+        },
+        city: {
             type: String,
             required: true
         },
@@ -16,4 +20,4 @@ const genreSchema = new mongoose.Schema(
     {timestamps: true}
 );
 
-export default mongoose.model("Genre", genreSchema, "genres");
+export default mongoose.model("Theater", theaterSchema, "theaters");

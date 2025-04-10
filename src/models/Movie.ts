@@ -13,7 +13,7 @@ const movieSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "Genre"
         },
-        theater: {
+        theaters: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Theater"
         },
@@ -48,7 +48,7 @@ movieSchema.post('save', async (doc) => {
             $push: { movies: doc._id }
         });
 
-        await Theater.findByIdAndUpdate(doc.theater, {
+        await Theater.findByIdAndUpdate(doc.theaters, {
             $push: { movies: doc._id }
         });
     }

@@ -36,7 +36,13 @@ const transactionSchema = new mongoose.Schema({
     date: {
         type: String,
         required: true
-    }
+    },
+    seats: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "TranscationSeat"
+        }
+    ]
 }, {timestamps: true});
 
 export default mongoose.model('Transaction', transactionSchema, 'transactions');

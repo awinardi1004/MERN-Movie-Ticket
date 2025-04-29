@@ -93,6 +93,7 @@ export const createMovie = async  (req: Request, res: Response) => {
             theaters: parse.data.theaters,
             thumbnail: req.file?.filename,
             description: parse.data.description,
+            price: parse.data.price,
             bonus: parse.data.bonus
         })
 
